@@ -51,6 +51,7 @@ public class MyBall : MonoBehaviour
         {
             itemCount++;
             audio.Play();
+            manager.GetItem(itemCount);
             other.gameObject.SetActive(false);
         }
 
@@ -58,13 +59,17 @@ public class MyBall : MonoBehaviour
         {
             if (manager.TotalItemCount == itemCount)
             {
-                SceneManager.LoadScene("Stage2");
+                if (manager.stage == 2)
+                    SceneManager.LoadScene(0);
+                else
+                    SceneManager.LoadScene(manager.stage + 1);
             }
 
             else
             {
-                SceneManager.LoadScene("Stage1");
+                SceneManager.LoadScene(manager.stage);
             }
         }
+
     }
 }
