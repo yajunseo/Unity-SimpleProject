@@ -1286,8 +1286,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TotalItemCount: 10
   stage: 1
-  StageItemText: {fileID: 0}
-  PlayerItemText: {fileID: 0}
+  StageItemText: {fileID: 1823908877}
+  PlayerItemText: {fileID: 978436253}
 --- !u!4 &1010478424
 Transform:
   m_ObjectHideFlags: 0
@@ -2128,8 +2128,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: / 0
 --- !u!222 &1823908878
