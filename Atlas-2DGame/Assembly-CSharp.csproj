@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PlayerMove.cs" />
+    <Compile Include="Assets\Scenes\EnemyMove.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/Atlas-2DGame/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        isBottom = true;
+     
         animator.SetBool("isBottom", isBottom);
     }
 
