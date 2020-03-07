@@ -17,10 +17,10 @@ TagManager:
   - 
   - 
   - Floor
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - PlayerDamage
+  - Item
   - 
   - 
   - 
