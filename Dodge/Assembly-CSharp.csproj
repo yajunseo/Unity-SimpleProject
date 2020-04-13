@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bullet Spawner.cs" />
+    <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\PlayerController.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/Dodge/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
