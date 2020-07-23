@@ -10900,6 +10900,7 @@ GameObject:
   - component: {fileID: 1290919327}
   - component: {fileID: 1290919326}
   - component: {fileID: 1290919328}
+  - component: {fileID: 1290919329}
   m_Layer: 0
   m_Name: Normal_Gun
   m_TagString: Untagged
@@ -10988,7 +10989,27 @@ MonoBehaviour:
   ps_MuzzleFlash: {fileID: 216399224}
   go_Bullet_Prefab: {fileID: 6040091507938129414, guid: c536ad84274b9b342b29d4a95bb35828,
     type: 3}
+  animator: {fileID: 1290919329}
   speed: 100
+--- !u!95 &1290919329
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290919324}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6d020e53024f3e469840e7f7460f448, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1310814377
 GameObject:
   m_ObjectHideFlags: 0
