@@ -35,5 +35,6 @@ public class Gun : MonoBehaviour
     [Header("총알 스피드")]
     public float speed;
 
-
+    [Header("총알 발사 사운드")]
+    public string sound_Fire;
 }

@@ -4881,3 +4881,4 @@ MonoBehaviour:
   go_RicichetEfeect: {fileID: 6687045584891055381, guid: 74b58b3d7d1c7894c9dadc4d32b214cf,
     type: 3}
   damage: 1
+  sound_Ricochet: NormalGun_Ricochet

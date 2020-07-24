@@ -47,6 +47,9 @@ public class GunController : MonoBehaviour
     {
         Debug.Log("총알 발사");
         currentGun.animator.SetTrigger("GunFire");
+
+        SoundManager.instance.PlaySE(currentGun.sound_Fire);
+
         currentGun.ps_MuzzleFlash.Play();
         var clone = Instantiate(currentGun.go_Bullet_Prefab, currentGun.ps_MuzzleFlash.transform.position, Quaternion.identity);  // 어떤 타입인지 모를때 var 타입을 사용
         clone.GetComponent<Rigidbody>().AddForce(transform.forward * currentGun.speed);

@@ -10,10 +10,20 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody myRigid;
 
+    public bool IsJet { get; private set; } // 은닉성 보장 property;
+
+    [Header("파티클 시스템(부스터)")]
+    [SerializeField] ParticleSystem ps_LeftEngine;
+    [SerializeField] ParticleSystem ps_RightEngine;
+
+    AudioSource AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        IsJet = false;
         myRigid = GetComponent<Rigidbody>();
+        AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,11 +46,28 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space))
         {
+            if (!IsJet)
+            {
+                ps_LeftEngine.Play();
+                ps_RightEngine.Play();
+                AudioSource.Play();
+                IsJet = true;
+            }
+
             myRigid.AddForce(Vector3.up * jetPackSpeed);
         }
 
         else
         {
+            if (IsJet)
+            {
+                ps_LeftEngine.Stop();
+                ps_RightEngine.Stop();
+                AudioSource.Stop();
+                IsJet = false;
+            }
+
+
             myRigid.AddForce(Vector3.down * jetPackSpeed);
         }
     }
