@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\GunController.cs" />
     <Compile Include="Assets\Scripts\JetPackController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/It's Trap/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
