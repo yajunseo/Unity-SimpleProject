@@ -18,12 +18,15 @@ public class PlayerController : MonoBehaviour
 
     AudioSource AudioSource;
 
+    JetEngineFuelManager theFuel;
+
     // Start is called before the first frame update
     void Start()
     {
         IsJet = false;
         myRigid = GetComponent<Rigidbody>();
         AudioSource = GetComponent<AudioSource>();
+        theFuel = FindObjectOfType<JetEngineFuelManager>();
     }
 
     // Update is called once per frame
@@ -44,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void TryJet()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space) && theFuel.IsFuel)
         {
             if (!IsJet)
             {
