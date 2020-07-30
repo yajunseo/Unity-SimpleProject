@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunController : MonoBehaviour
 {
@@ -9,10 +10,18 @@ public class GunController : MonoBehaviour
 
     float currentFireRate;  // 0이 될때 발사 가능
 
+    [SerializeField] Text txt_CurrentGunBullet;
+
     // Start is called before the first frame update
     void Start()
     {
         currentFireRate = 0;
+        BulletUiSetting();
+    }
+
+    public void BulletUiSetting()
+    {
+        txt_CurrentGunBullet.text = "x " + currentGun.bulletCount;
     }
 
     // Update is called once per frame
@@ -33,7 +42,7 @@ public class GunController : MonoBehaviour
 
     void TryFire()
     {
-        if(Input.GetButton("Fire1"))
+        if(Input.GetButton("Fire1") && currentGun.bulletCount > 0)
         {
             if (currentFireRate <= 0)
             {
@@ -45,7 +54,8 @@ public class GunController : MonoBehaviour
 
     void Fire()
     {
-        Debug.Log("총알 발사");
+        currentGun.bulletCount--;
+        BulletUiSetting();
         currentGun.animator.SetTrigger("GunFire");
 
         SoundManager.instance.PlaySE(currentGun.sound_Fire);
