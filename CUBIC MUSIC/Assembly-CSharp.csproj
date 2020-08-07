@@ -63,12 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Centerflame.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Manager\Centerflame.cs" />
     <Compile Include="Assets\Scripts\Manager\EffectManager.cs" />
     <Compile Include="Assets\Scripts\Manager\Note.cs" />
     <Compile Include="Assets\Scripts\Manager\NoteManager.cs" />
     <Compile Include="Assets\Scripts\Manager\TimingManager.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -8,7 +8,6 @@ public class NoteManager : MonoBehaviour
     double currentTime = 0d;
 
     [SerializeField] Transform tfNoteAppear = null;
-    [SerializeField] GameObject goNote = null;
 
 
     TimingManager theTimingManager;
@@ -27,8 +26,10 @@ public class NoteManager : MonoBehaviour
 
         if(currentTime >= 60d / bpm)
         {
-            GameObject t_note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
-            t_note.transform.SetParent(this.transform); // 이스크립트가 붙어있는 객체를 부모로 설정
+            GameObject t_note = ObjectPool.instance.noteQueue.Dequeue();
+            t_note.transform.position = tfNoteAppear.position;
+            t_note.SetActive(true);
+  
             theTimingManager.boxNoteList.Add(t_note);
             currentTime -= 60d / bpm;    // 0 안됨 currenttime이 딱 떨어지는게 아닌 0.51005551 이런식으로 되므로 0.01005의 오차가 손실됨
         }
@@ -42,7 +43,10 @@ public class NoteManager : MonoBehaviour
                 theEffectManager.JudgementEffect(4);
 
             theTimingManager.boxNoteList.Remove(collision.gameObject);
-            Destroy(collision.gameObject);
+
+            ObjectPool.instance.noteQueue.Enqueue(collision.gameObject);
+            collision.gameObject.SetActive(false);
+
         }
     }
 }
