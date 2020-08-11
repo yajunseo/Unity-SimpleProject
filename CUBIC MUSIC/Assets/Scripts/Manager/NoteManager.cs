@@ -7,6 +7,8 @@ public class NoteManager : MonoBehaviour
     public int bpm = 0;
     double currentTime = 0d;
 
+    bool noteActive = true;
+
     [SerializeField] Transform tfNoteAppear = null;
 
 
@@ -24,16 +26,19 @@ public class NoteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.deltaTime;
-
-        if(currentTime >= 60d / bpm)
+        if (noteActive)
         {
-            GameObject t_note = ObjectPool.instance.noteQueue.Dequeue();
-            t_note.transform.position = tfNoteAppear.position;
-            t_note.SetActive(true);
-  
-            theTimingManager.boxNoteList.Add(t_note);
-            currentTime -= 60d / bpm;    // 0 안됨 currenttime이 딱 떨어지는게 아닌 0.51005551 이런식으로 되므로 0.01005의 오차가 손실됨
+            currentTime += Time.deltaTime;
+
+            if (currentTime >= 60d / bpm)
+            {
+                GameObject t_note = ObjectPool.instance.noteQueue.Dequeue();
+                t_note.transform.position = tfNoteAppear.position;
+                t_note.SetActive(true);
+
+                theTimingManager.boxNoteList.Add(t_note);
+                currentTime -= 60d / bpm;    // 0 안됨 currenttime이 딱 떨어지는게 아닌 0.51005551 이런식으로 되므로 0.01005의 오차가 손실됨
+            }
         }
     }
 
@@ -52,6 +57,17 @@ public class NoteManager : MonoBehaviour
             ObjectPool.instance.noteQueue.Enqueue(collision.gameObject);
             collision.gameObject.SetActive(false);
 
+        }
+    }
+
+    public void RemoveNote()
+    {
+        noteActive = false;
+
+        for(int i=0;i<theTimingManager.boxNoteList.Count;i++)
+        {
+            theTimingManager.boxNoteList[i].SetActive(false);
+            ObjectPool.instance.noteQueue.Enqueue(theTimingManager.boxNoteList[i]);
         }
     }
 }

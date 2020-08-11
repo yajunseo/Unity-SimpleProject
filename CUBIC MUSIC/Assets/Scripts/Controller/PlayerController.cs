@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static bool s_canPresskey = true;
+
     // 이동
     [SerializeField] float moveSpeed = 3;
     Vector3 dir = new Vector3();
-    Vector3 desPos = new Vector3();
+    public Vector3 desPos = new Vector3();
 
     // 회전
     [SerializeField] float spinSpeed = 270;
@@ -27,10 +30,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform realCube = null;
 
     TimingManager theTimingManager;
+    CameraController theCam;
 
     private void Start()
     {
         theTimingManager = FindObjectOfType<TimingManager>();
+        theCam = FindObjectOfType<CameraController>();
     }
 
     // Update is called once per frame
@@ -38,8 +43,10 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W))
         {
-            if (canMove)
-            { 
+            if (canMove & s_canPresskey)
+            {
+                Calc();
+
                 // 판정 체크
                 if (theTimingManager.CheckTiming())
                 {
@@ -49,10 +56,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void StartAction()
+    void Calc()
     {
         // 방향 계산
-        dir.Set(Input.GetAxisRaw("Vertical"),0,Input.GetAxisRaw("Horizontal"));
+        dir.Set(Input.GetAxisRaw("Vertical"), 0, Input.GetAxisRaw("Horizontal"));
 
         // 이동 목표값 계산
         desPos = transform.position + new Vector3(-dir.x, 0, dir.z);
@@ -61,10 +68,16 @@ public class PlayerController : MonoBehaviour
         rotDir = new Vector3(-dir.z, 0f, -dir.x);
         fakeCube.RotateAround(transform.position, rotDir, spinSpeed);   // 공전에 쓰임
         destRot = fakeCube.rotation;
+    }
+
+    void StartAction()
+    {
+ 
 
         StartCoroutine(MoveCo());
         StartCoroutine(Spin());
         StartCoroutine(RecoilCo());
+        StartCoroutine(theCam.ZoomCam());
     }
 
     IEnumerator MoveCo()
