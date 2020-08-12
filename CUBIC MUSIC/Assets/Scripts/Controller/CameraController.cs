@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
 
     float hitDistance = 0;
     [SerializeField] float zoomDistance = -1.25f;
+    Vector3 tempPos;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class CameraController : MonoBehaviour
     {
         Vector3 t_destPos = thePlayer.position + playerDistance + (transform.forward * hitDistance);
         transform.position = Vector3.Lerp(transform.position, t_destPos, followSpeed * Time.deltaTime);
+
     }
 
     public IEnumerator ZoomCam()

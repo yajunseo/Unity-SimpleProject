@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TimingManager : MonoBehaviour
 {
     public List<GameObject> boxNoteList = new List<GameObject>();
+
+    int[] judgementRecord = new int[5];
 
     [SerializeField] Transform Center = null;
     [SerializeField] RectTransform[] timingRect = null;
@@ -56,7 +59,8 @@ public class TimingManager : MonoBehaviour
                     {
                         theScoreManager.IncreaseScore(x); // 점수 증가
                         theStageManager.ShowNewPlate();   // 판때기 등장
-                        theEffect.JudgementEffect(x);
+                        theEffect.JudgementEffect(x);  // 판정 연출
+                        judgementRecord[x]++; // 판정 기록
                     }
 
                     else
@@ -69,6 +73,7 @@ public class TimingManager : MonoBehaviour
         }
         theComboManager.ResetCombo();
         theEffect.JudgementEffect(4);
+        MissRecord();
         return false;
     }
 
@@ -87,5 +92,15 @@ public class TimingManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public int[] GetJudgementRecord()
+    {
+        return judgementRecord;
+    }
+
+    public void MissRecord()
+    {
+        judgementRecord[4]++; // 판정 기록
     }
 }
