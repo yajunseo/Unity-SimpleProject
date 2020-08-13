@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class Centerflame : MonoBehaviour
 {
-    AudioSource myAudio;
+    
     bool musicStart = false;
 
-    private void Start()
-    {
-        myAudio = GetComponent<AudioSource>();
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,7 +14,7 @@ public class Centerflame : MonoBehaviour
         {
             if (collision.CompareTag("Note"))
             {
-                myAudio.Play();
+                AudioManger.instance.PlayBGM("BGM0");
                 musicStart = true;
             }
         }

@@ -18,6 +18,8 @@ public class TimingManager : MonoBehaviour
     ComboManager theComboManager;
     StageManager theStageManager;
     PlayerController thePlayer;
+    StatusManager theStautsManager;
+    AudioManger theAudioManager;
  
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,8 @@ public class TimingManager : MonoBehaviour
         theComboManager = FindObjectOfType<ComboManager>();
         theStageManager = FindObjectOfType<StageManager>();
         thePlayer = FindObjectOfType<PlayerController>();
+        theStautsManager = FindObjectOfType<StatusManager>();
+        theAudioManager = FindObjectOfType<AudioManger>();
 
         // 타이밍 박스 설정
         timingBoxs = new Vector2[timingRect.Length];
@@ -61,12 +65,16 @@ public class TimingManager : MonoBehaviour
                         theStageManager.ShowNewPlate();   // 판때기 등장
                         theEffect.JudgementEffect(x);  // 판정 연출
                         judgementRecord[x]++; // 판정 기록
+                        theStautsManager.CheckShield(); // 쉴드 체크
                     }
 
                     else
                     {
                         theEffect.JudgementEffect(5);
                     }
+
+                    theAudioManager.PlaySFX("Clap");
+
                     return true;
                 }
             }
@@ -102,5 +110,6 @@ public class TimingManager : MonoBehaviour
     public void MissRecord()
     {
         judgementRecord[4]++; // 판정 기록
+        theStautsManager.ResetShieldCombp();
     }
 }

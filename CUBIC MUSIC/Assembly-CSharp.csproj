@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Controller\CameraController.cs" />
     <Compile Include="Assets\Scripts\Controller\PlayerController.cs" />
     <Compile Include="Assets\Scripts\DeadZone.cs" />
+    <Compile Include="Assets\Scripts\Manager\AudioManger.cs" />
     <Compile Include="Assets\Scripts\Manager\ComboManager.cs" />
     <Compile Include="Assets\Scripts\Manager\EffectManager.cs" />
     <Compile Include="Assets\Scripts\Manager\Note.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Scripts\Manager\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Manager\Stage.cs" />
     <Compile Include="Assets\Scripts\Manager\StageManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\StatusManager.cs" />
     <Compile Include="Assets\Scripts\Manager\TimingManager.cs" />
     <Compile Include="Assets\Scripts\Menu\Result.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
