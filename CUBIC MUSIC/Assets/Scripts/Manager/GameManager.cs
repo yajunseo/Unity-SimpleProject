@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     StatusManager theStatus;
     PlayerController thePlayer;
     StageManager theStage;
+    NoteManager theNote;
+    [SerializeField] Centerflame theMusic = null;  // 비활성화 했기 때문에 FindObjectOfType 으로 찾을 수 없음
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,15 +32,17 @@ public class GameManager : MonoBehaviour
         theStatus = FindObjectOfType<StatusManager>();
         thePlayer = FindObjectOfType<PlayerController>();
         theStage = FindObjectOfType<StageManager>();
+        theNote = FindObjectOfType<NoteManager>();
     }
 
-    public void GameStart()
+    public void GameStart(int p_songNum, int p_bpm)
     {
         for(int i=0;i<goGameUI.Length;i++)
         {
             goGameUI[i].SetActive(true);
         }
-
+        theMusic.bgmName = "BGM" + p_songNum;
+        theNote.bpm = p_bpm;
         theStage.RemoveStage();
         theStage.SettingStage();
         theCombo.ResetCombo();
@@ -45,6 +50,9 @@ public class GameManager : MonoBehaviour
         theTiming.Initialized();
         theStatus.Initialized();
         thePlayer.Initialized();
+
+
+        AudioManger.instance.StopBGM();
 
         isStartGame = true;
     }

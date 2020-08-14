@@ -7,6 +7,8 @@ public class Centerflame : MonoBehaviour
     
     bool musicStart = false;
 
+    public string bgmName = "";
+
     public void ResetMusic()
     {
         musicStart = false;
@@ -18,7 +20,7 @@ public class Centerflame : MonoBehaviour
         {
             if (collision.CompareTag("Note"))
             {
-                AudioManger.instance.PlayBGM("BGM0");
+                AudioManger.instance.PlayBGM(bgmName);
                 musicStart = true;
             }
         }

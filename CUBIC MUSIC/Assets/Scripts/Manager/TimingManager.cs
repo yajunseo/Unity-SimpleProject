@@ -24,6 +24,7 @@ public class TimingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        theAudioManager = AudioManger.instance;
         theEffect = FindObjectOfType<EffectManager>();
         theScoreManager = FindObjectOfType<ScoreManager>();
         theComboManager = FindObjectOfType<ComboManager>();
