@@ -7,6 +7,10 @@ public class Centerflame : MonoBehaviour
     
     bool musicStart = false;
 
+    public void ResetMusic()
+    {
+        musicStart = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

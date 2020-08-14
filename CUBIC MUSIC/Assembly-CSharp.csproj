@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Manager\AudioManger.cs" />
     <Compile Include="Assets\Scripts\Manager\ComboManager.cs" />
     <Compile Include="Assets\Scripts\Manager\EffectManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Manager\Note.cs" />
     <Compile Include="Assets\Scripts\Manager\NoteManager.cs" />
     <Compile Include="Assets\Scripts\Manager\ScoreManager.cs" />
@@ -78,6 +79,8 @@
     <Compile Include="Assets\Scripts\Manager\StatusManager.cs" />
     <Compile Include="Assets\Scripts\Manager\TimingManager.cs" />
     <Compile Include="Assets\Scripts\Menu\Result.cs" />
+    <Compile Include="Assets\Scripts\Menu\StageMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\TitleMenu.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Plate\BasicPlate.cs" />
     <Compile Include="Assets\Scripts\Plate\GoalPlate.cs" />

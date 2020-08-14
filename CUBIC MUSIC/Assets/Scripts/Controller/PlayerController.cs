@@ -45,21 +45,36 @@ public class PlayerController : MonoBehaviour
         theStatus = FindObjectOfType<StatusManager>();
     }
 
+    public void Initialized()
+    {
+        transform.position = Vector3.zero;
+        desPos = Vector3.zero;
+        realCube.localPosition = Vector3.zero;
+        canMove = true;
+        s_canPresskey = true;
+        isFalling = false;
+        myRigid.useGravity = false;
+        myRigid.isKinematic = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        CheckFalling();
-
-        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W))
+        if(GameManager.instance.isStartGame)
         {
-            if (canMove & s_canPresskey && !isFalling)
-            {
-                Calc();
+            CheckFalling();
 
-                // 판정 체크
-                if (theTimingManager.CheckTiming())
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W))
+            {
+                if (canMove & s_canPresskey && !isFalling)
                 {
-                    StartAction();
+                    Calc();
+
+                    // 판정 체크
+                    if (theTimingManager.CheckTiming())
+                    {
+                        StartAction();
+                    }
                 }
             }
         }
