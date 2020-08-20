@@ -299,6 +299,24 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Backend">
+      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/Backend.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="TheBackend.iOS">
+      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/Android/TheBackend.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="TheBackendHashKeySettings">
+      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/Settings/TheBackendHashKeySettings.dll</HintPath>
+    </Reference>
+    <Reference Include="TheBackendSettings">
+      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/Settings/TheBackendSettings.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -307,24 +325,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="TheBackendHashKeySettings">
-      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/Settings/TheBackendHashKeySettings.dll</HintPath>
-    </Reference>
-    <Reference Include="TheBackend.iOS">
-      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/Android/TheBackend.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Immutable">
-      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="TheBackendSettings">
-      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/Settings/TheBackendSettings.dll</HintPath>
-    </Reference>
-    <Reference Include="Backend">
-      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/Backend.dll</HintPath>
-    </Reference>
-    <Reference Include="LitJson">
-      <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/CUBIC MUSIC/Assets/TheBackend/Plugins/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
