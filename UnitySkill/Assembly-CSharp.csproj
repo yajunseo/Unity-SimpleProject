@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\createCube.cs" />
     <Compile Include="Assets\cube.cs" />
+    <Compile Include="Assets\HpBarScript.cs" />
     <Compile Include="Assets\ObjectPoolingManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/UnitySkill/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
