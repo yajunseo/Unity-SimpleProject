@@ -70,6 +70,7 @@
     <Compile Include="Assets\HpBarScript.cs" />
     <Compile Include="Assets\MouseController.cs" />
     <Compile Include="Assets\ObjectPoolingManager.cs" />
+    <Compile Include="Assets\TextureScrolling.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/UnitySkill/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
