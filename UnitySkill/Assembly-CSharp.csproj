@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\BackgroundScrolling.cs" />
+    <Compile Include="Assets\cameraShake.cs" />
     <Compile Include="Assets\createCube.cs" />
     <Compile Include="Assets\cube.cs" />
     <Compile Include="Assets\CubeDebris.cs" />
