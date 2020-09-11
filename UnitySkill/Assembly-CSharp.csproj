@@ -72,6 +72,7 @@
     <Compile Include="Assets\MouseController.cs" />
     <Compile Include="Assets\ObjectPoolingManager.cs" />
     <Compile Include="Assets\TextureScrolling.cs" />
+    <Compile Include="Assets\Turret.cs" />
     <Compile Include="Assets\zoom.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/yajunseo/Desktop/practice/Unity-SimpleProject/UnitySkill/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
